@@ -191,32 +191,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Mobile menu handling
-const navbarToggler = document.querySelector('.navbar-toggler');
-const navbarCollapse = document.querySelector('.navbar-collapse');
-
-navbarToggler.addEventListener('click', function() {
-    setTimeout(() => {
-        if (navbarCollapse.classList.contains('show')) {
-            navbarCollapse.style.maxHeight = navbarCollapse.scrollHeight + 'px';
-        } else {
-            navbarCollapse.style.maxHeight = '0';
-        }
-    }, 10);
-});
-
-// Close mobile menu when clicking on a link
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function() {
-        if (window.innerWidth < 992) {
-            const navbarCollapse = document.querySelector('.navbar-collapse');
-            const navbarToggler = document.querySelector('.navbar-toggler');
-            navbarCollapse.classList.remove('show');
-            navbarToggler.classList.remove('collapsed');
-        }
-    });
-});
-
 // Parallax effect for hero section
 window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
